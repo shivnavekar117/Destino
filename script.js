@@ -1,6 +1,8 @@
-// Autoplay audio with fade-in (works everywhere)
+// Autoplay background music with fade-in
 window.addEventListener("load", () => {
     const bgMusic = document.getElementById("bgMusic");
+
+    if (!bgMusic) return;
 
     bgMusic.volume = 0;
 
@@ -15,9 +17,7 @@ window.addEventListener("load", () => {
             }
             bgMusic.volume = volume;
         }, 150);
-
     }).catch(() => {
-        // Autoplay blocked — fallback
         const startOnClick = () => {
             bgMusic.play();
             document.removeEventListener("click", startOnClick);
@@ -27,6 +27,11 @@ window.addEventListener("load", () => {
 });
 
 // Submit alert
-document.getElementById("dateForm").addEventListener("submit", function() {
-    alert("Your choice is on the way to Shiv 💙");
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("dateForm");
+    if (form) {
+        form.addEventListener("submit", () =>
+            alert("Your choice is on the way to Shiv 💙")
+        );
+    }
 });
