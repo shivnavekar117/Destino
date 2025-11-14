@@ -1,78 +1,31 @@
-body {
-  margin: 0;
-  padding: 0;
-  background: #dbefff;
-  font-family: "Jersey 25", sans-serif;
-}
+// Autoplay audio on page load (muted first), then fade in
+window.addEventListener("load", () => {
+    const bgMusic = document.getElementById("bgMusic");
 
-.hint {
-  text-align: center;
-  margin-top: 10px;
-  opacity: 0.6;
-  font-size: 18px;
-}
+    bgMusic.volume = 0; // start muted
 
-.container {
-  max-width: 500px;
-  margin: 40px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  text-align: center;
-}
+    bgMusic.play().then(() => {
+        let volume = 0;
 
-h1 {
-  font-size: 52px;
-  margin-bottom: 5px;
-}
+        let fade = setInterval(() => {
+            volume += 0.02; // fade speed
+            if (volume >= 0.5) { 
+                volume = 0.5; // final volume
+                clearInterval(fade);
+            }
+            bgMusic.volume = volume;
+        }, 150); // fade interval
+    }).catch(() => {
+        // If autoplay is blocked (rare), start on first tap
+        const startOnClick = () => {
+            bgMusic.play();
+            document.removeEventListener("click", startOnClick);
+        };
+        document.addEventListener("click", startOnClick);
+    });
+});
 
-.subtitle {
-  font-size: 22px;
-  margin-bottom: 30px;
-  color: #444;
-}
-
-label {
-  display: block;
-  text-align: left;
-  margin: 15px 0 5px;
-  font-size: 22px;
-}
-
-select, textarea {
-  width: 100%;
-  padding: 12px;
-  font-size: 20px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-family: inherit;
-}
-
-textarea {
-  height: 90px;
-  resize: none;
-}
-
-button {
-  width: 100%;
-  padding: 18px;
-  margin-top: 30px;
-  font-size: 26px;
-  background: #5aa6ff;
-  border: none;
-  color: white;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-button:hover {
-  background: #3d8be0;
-}
-
-.footer {
-  margin-top: 30px;
-  color: #555;
-  font-size: 20px;
-}
+// Submit alert
+document.getElementById("dateForm").addEventListener("submit", function() {
+    alert("Your choice is on the way to Shiv 💙");
+});
