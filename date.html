@@ -23,56 +23,35 @@
 
     <form action="https://formspree.io/f/mgvrebjy" method="POST" id="dateForm">
 
-      <!-- PIXEL CALENDAR -->
-      <label>Select a date:</label>
-      <div class="pixel-calendar" id="pixelCalendar">
-        <!-- Dates inserted by JS -->
+      <label>Pick a date:</label>
+      <div class="pixel-dropdown" data-name="chosen_date">
+        <div class="pixel-selected">Choose one…</div>
+        <ul class="pixel-options">
+          <li data-value="Friday 7PM">Friday — 7PM</li>
+          <li data-value="Saturday Afternoon">Saturday — Afternoon</li>
+          <li data-value="Sunday Brunch">Sunday — Brunch</li>
+        </ul>
       </div>
-      <input type="hidden" name="chosen_date" id="chosenDate">
+      <input type="hidden" name="chosen_date">
 
-      <!-- TIME -->
-      <label>Select a time:</label>
-      <div class="pixel-dropdown" data-name="chosen_time">
-        <div class="pixel-selected">Choose a time…</div>
-        <ul class="pixel-options" id="timeOptions"></ul>
-      </div>
-      <input type="hidden" name="chosen_time">
-
-      <!-- LOCATION -->
-      <label>Select a location:</label>
+      <label>Pick a location:</label>
       <div class="pixel-dropdown" data-name="chosen_location">
         <div class="pixel-selected">Choose one…</div>
         <ul class="pixel-options">
-          <li data-value="Leicester">Leicester</li>
-          <li data-value="Bedford">Bedford</li>
-          <li data-value="Loughborough">Loughborough</li>
-          <li data-value="Venice">Venice</li>
+          <li data-value="Italian Restaurant">Italian Restaurant</li>
+          <li data-value="Coffee Date">Coffee Date</li>
+          <li data-value="Walk + Dessert">Walk + Dessert</li>
         </ul>
       </div>
       <input type="hidden" name="chosen_location">
 
-      <!-- DATE TYPE -->
-      <label>Select the type of date:</label>
-      <div class="pixel-dropdown" data-name="chosen_type">
-        <div class="pixel-selected">Choose one…</div>
-        <ul class="pixel-options">
-          <li data-value="Chai">Chai</li>
-          <li data-value="Pasta">Pasta</li>
-          <li data-value="Pizza">Pizza</li>
-          <li data-value="Art Gallery / Museum">Art Gallery / Museum</li>
-          <li data-value="Just a stroll">Just a stroll</li>
-        </ul>
-      </div>
-      <input type="hidden" name="chosen_type">
-
-      <!-- MESSAGE -->
       <label>Anything you want me to know? ❤️</label>
       <textarea name="message" placeholder="Write something cute…"></textarea>
 
       <button type="submit">Send Your Choice 💌</button>
     </form>
 
-    <p class="footer">Powered by Roti & Co™</p>
+    <p class="footer">Powered by Roti & Co</p>
   </div>
 
   <!-- Pixel popup -->
