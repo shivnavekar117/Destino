@@ -1,10 +1,4 @@
 /* ----------------------------------------------------
-   FLOATING PIXEL CLOUDS (if you added them earlier)
----------------------------------------------------- */
-// (leave cloud code here if you added it)
-
-
-/* ----------------------------------------------------
    PIXEL CALENDAR
 ---------------------------------------------------- */
 
@@ -39,7 +33,6 @@ if (calendarContainer) {
   });
 }
 
-
 /* ----------------------------------------------------
    TIME OPTIONS GENERATOR
 ---------------------------------------------------- */
@@ -55,7 +48,6 @@ if (timeList) {
     timeList.appendChild(li);
   }
 }
-
 
 /* ----------------------------------------------------
    CUSTOM DROPDOWNS
@@ -83,9 +75,8 @@ document.addEventListener("click", e => {
   });
 });
 
-
 /* ----------------------------------------------------
-   PIXEL POPUP + ROSE ON SUBMIT
+   PIXEL POPUP + ROSE
 ---------------------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -118,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
 /* ----------------------------------------------------
    MUSIC FADE-IN
 ---------------------------------------------------- */
@@ -144,11 +134,13 @@ window.addEventListener("load", () => {
   });
 });
 
-/* --------------------------------------
-   ENVELOPE OPEN ANIMATION
--------------------------------------- */
+/* ----------------------------------------------------
+   ENVELOPE ANIMATION
+---------------------------------------------------- */
+
 if (document.getElementById("letter")) {
   const letter = document.getElementById("letter");
+
   letter.addEventListener("click", () => {
     letter.classList.add("opening");
 
@@ -161,4 +153,3 @@ if (document.getElementById("letter")) {
     }, 1100);
   });
 }
-
