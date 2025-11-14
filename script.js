@@ -32,12 +32,10 @@ document.querySelectorAll(".pixel-dropdown").forEach(drop => {
     const options = drop.querySelector(".pixel-options");
     const hiddenInput = document.querySelector(`input[name="${drop.dataset.name}"]`);
 
-    // Toggle open
     selected.addEventListener("click", () => {
         drop.classList.toggle("open");
     });
 
-    // Select option
     options.querySelectorAll("li").forEach(li => {
         li.addEventListener("click", () => {
             selected.textContent = li.textContent;
@@ -47,7 +45,6 @@ document.querySelectorAll(".pixel-dropdown").forEach(drop => {
     });
 });
 
-// Close dropdowns if clicked elsewhere
 document.addEventListener("click", e => {
     document.querySelectorAll(".pixel-dropdown").forEach(d => {
         if (!d.contains(e.target)) d.classList.remove("open");
