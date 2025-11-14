@@ -1,4 +1,4 @@
-// Autoplay audio with fade-in (works on iPhone/Android/desktop)
+// Autoplay audio with fade-in (works everywhere)
 window.addEventListener("load", () => {
     const bgMusic = document.getElementById("bgMusic");
 
@@ -15,8 +15,9 @@ window.addEventListener("load", () => {
             }
             bgMusic.volume = volume;
         }, 150);
+
     }).catch(() => {
-        // If autoplay blocked, start when user taps
+        // Autoplay blocked — fallback
         const startOnClick = () => {
             bgMusic.play();
             document.removeEventListener("click", startOnClick);
