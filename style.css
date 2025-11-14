@@ -1,5 +1,5 @@
 /* ------------------------------------------
-   GLOBAL + BACKGROUND + CURSOR
+   GLOBAL + CURSOR + BACKGROUND
 ------------------------------------------ */
 
 body {
@@ -19,8 +19,9 @@ body, button, textarea, input, img, div, li, ul {
   cursor: url("pixel-cursor.png") 0 0, auto !important;
 }
 
+
 /* ------------------------------------------
-   LANDING PAGE
+   LANDING PAGE (ENVELOPE)
 ------------------------------------------ */
 
 body.landing {
@@ -38,7 +39,11 @@ body.landing {
 
 .letter {
   width: 160px;
-  animation: float 2s infinite ease-in-out;
+  transition: transform .6s ease;
+}
+
+.letter.opening {
+  transform: rotateX(180deg) scale(1.2);
 }
 
 .open-text {
@@ -47,11 +52,14 @@ body.landing {
   color: #4f6e89;
 }
 
-body.fade-out { animation: fadeOut .6s forwards; }
+body.fade-out {
+  animation: fadeOut .6s forwards;
+}
+
 @keyframes fadeOut { to { opacity: 0; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
 @keyframes pop { from{transform:scale(.7);opacity:0} to{transform:scale(1);opacity:1} }
+
 
 /* ------------------------------------------
    MAIN CONTAINER
@@ -73,9 +81,7 @@ body.fade-out { animation: fadeOut .6s forwards; }
   border-radius: 12px;
 
   border: 4px solid #8cc4ff;
-  box-shadow:
-     0 0 0 4px #cbe6ff,
-     6px 6px 0 #8cc4ff;
+  box-shadow: 0 0 0 4px #cbe6ff, 6px 6px 0 #8cc4ff;
 
   text-align: center;
 }
@@ -93,7 +99,7 @@ h1 {
 }
 
 /* ------------------------------------------
-   PIXEL DROPDOWN
+   PIXEL DROPDOWNS
 ------------------------------------------ */
 
 .pixel-dropdown {
@@ -125,9 +131,7 @@ h1 {
   z-index: 999;
 }
 
-.pixel-dropdown.open .pixel-options {
-  display: block;
-}
+.pixel-dropdown.open .pixel-options { display: block; }
 
 .pixel-options li {
   padding: 12px;
@@ -170,7 +174,7 @@ textarea::placeholder {
 }
 
 /* ------------------------------------------
-   BUTTON — PIXEL FONT
+   BUTTON (PIXEL FONT)
 ------------------------------------------ */
 
 button {
@@ -214,4 +218,27 @@ button:active {
   font-family: "Press Start 2P", monospace !important;
   letter-spacing: 1px;
   opacity: 0.6;
+}
+
+/* ------------------------------------------
+   PIXEL ROSE FLOATING ANIMATION
+------------------------------------------ */
+
+#rose-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.rose {
+  position: absolute;
+  width: 40px;
+  animation: floatUp 2.4s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-280px) scale(1.3); opacity: 0; }
 }
