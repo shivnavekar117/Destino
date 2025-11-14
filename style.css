@@ -322,3 +322,10 @@ button:active {
   box-shadow: 4px 4px 0 #5aa6ff;
 }
 
+/* FIX LETTER CLICKABILITY */
+#letter {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 50;
+}
+
