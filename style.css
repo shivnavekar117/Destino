@@ -1,8 +1,24 @@
+/* Pixel cursor for whole page */
 body {
   margin: 0;
   padding: 0;
   background: #dbefff;
   font-family: "Jersey 25", sans-serif;
+  cursor: url("pixel-cursor.png") 0 0, auto; /* pastel pixel cursor */
+}
+
+/* Make sure buttons also use it (instead of default hand) */
+button {
+  width: 100%;
+  padding: 18px;
+  margin-top: 30px;
+  font-size: 26px;
+  background: #5aa6ff;
+  border: none;
+  color: white;
+  border-radius: 12px;
+  cursor: url("pixel-cursor.png") 0 0, pointer;
+  transition: 0.2s;
 }
 
 .hint {
@@ -52,19 +68,6 @@ select, textarea {
 textarea {
   height: 90px;
   resize: none;
-}
-
-button {
-  width: 100%;
-  padding: 18px;
-  margin-top: 30px;
-  font-size: 26px;
-  background: #5aa6ff;
-  border: none;
-  color: white;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.2s;
 }
 
 button:hover {
