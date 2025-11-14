@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (form) {
     form.addEventListener("submit", () => {
-      alert("Your choice is on the way to Shiv 💖");
+      alert("Grazie bella, il tuo messaggio è arrivato 💌");
 
       const container = document.getElementById("rose-container");
       const rose = document.createElement("img");
@@ -91,3 +91,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
