@@ -1,22 +1,22 @@
-// Autoplay audio on page load (muted first), then fade in
+// Autoplay audio with fade-in (works on iPhone/Android/desktop)
 window.addEventListener("load", () => {
     const bgMusic = document.getElementById("bgMusic");
 
-    bgMusic.volume = 0; // start muted
+    bgMusic.volume = 0;
 
     bgMusic.play().then(() => {
         let volume = 0;
 
         let fade = setInterval(() => {
-            volume += 0.02; // fade speed
-            if (volume >= 0.5) { 
-                volume = 0.5; // final volume
+            volume += 0.02;
+            if (volume >= 0.5) {
+                volume = 0.5;
                 clearInterval(fade);
             }
             bgMusic.volume = volume;
-        }, 150); // fade interval
+        }, 150);
     }).catch(() => {
-        // If autoplay is blocked (rare), start on first tap
+        // If autoplay blocked, start when user taps
         const startOnClick = () => {
             bgMusic.play();
             document.removeEventListener("click", startOnClick);
