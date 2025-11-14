@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #dbefff;
+  font-family: "Jersey 25", sans-serif;
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin: 15px 0 5px;
+  font-size: 20px;
+}
+
+select, textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+}
+
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 25px;
+  font-size: 24px;
+  background: #5aa6ff;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #3d8be0;
+}
+
+.footer {
+  margin-top: 25px;
+  color: #666;
+  font-size: 18px;
+}

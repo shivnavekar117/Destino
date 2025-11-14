@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destino • Choose Our Date</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Destino</h1>
+    <p class="subtitle">Scegli il nostro appuntamento…</p>
+
+    <form action="https://formspree.io/f/yourFormIDHere" method="POST" id="dateForm">
+
+      <label>Pick a date:</label>
+      <select name="chosen_date" required>
+        <option value="">Choose one...</option>
+        <option value="Friday 7PM">Friday — 7PM</option>
+        <option value="Saturday Afternoon">Saturday — Afternoon</option>
+        <option value="Sunday Brunch">Sunday — Brunch</option>
+      </select>
+
+      <label>Pick a location:</label>
+      <select name="chosen_location" required>
+        <option value="">Choose one...</option>
+        <option value="Italian Restaurant">Italian Restaurant</option>
+        <option value="Coffee Date">Coffee Date</option>
+        <option value="Walk + Dessert">Walk + Dessert</option>
+      </select>
+
+      <label>Anything you want me to know? ❤️</label>
+      <textarea name="message" placeholder="Write something cute…"></textarea>
+
+      <button type="submit">Send Your Choice 💌</button>
+    </form>
+
+    <p class="footer">Made for you by Shiv</p>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
