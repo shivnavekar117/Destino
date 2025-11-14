@@ -143,3 +143,22 @@ window.addEventListener("load", () => {
     document.addEventListener("click", () => bgMusic.play(), { once: true });
   });
 });
+
+/* --------------------------------------
+   ENVELOPE OPEN ANIMATION
+-------------------------------------- */
+if (document.getElementById("letter")) {
+  const letter = document.getElementById("letter");
+  letter.addEventListener("click", () => {
+    letter.classList.add("opening");
+
+    setTimeout(() => {
+      document.body.classList.add("fade-out");
+    }, 500);
+
+    setTimeout(() => {
+      window.location.href = "date.html";
+    }, 1100);
+  });
+}
+
