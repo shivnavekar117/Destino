@@ -10,7 +10,6 @@
 
 <body>
 
-  <!-- Background Music -->
   <audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mpeg">
   </audio>
@@ -23,21 +22,31 @@
 
     <form action="https://formspree.io/f/mgvrebjy" method="POST" id="dateForm">
 
+      <!-- CUSTOM PIXEL DROPDOWN -->
       <label>Pick a date:</label>
-      <select name="chosen_date" required>
-        <option value="">Choose one...</option>
-        <option value="Friday 7PM">Friday — 7PM</option>
-        <option value="Saturday Afternoon">Saturday — Afternoon</option>
-        <option value="Sunday Brunch">Sunday — Brunch</option>
-      </select>
+      <div class="pixel-dropdown" data-name="chosen_date">
+        <div class="pixel-selected">Choose one…</div>
+        <ul class="pixel-options">
+          <li data-value="Friday 7PM">Friday — 7PM</li>
+          <li data-value="Saturday Afternoon">Saturday — Afternoon</li>
+          <li data-value="Sunday Brunch">Sunday — Brunch</li>
+        </ul>
+      </div>
 
+      <input type="hidden" name="chosen_date">
+
+      <!-- SECOND DROPDOWN -->
       <label>Pick a location:</label>
-      <select name="chosen_location" required>
-        <option value="">Choose one...</option>
-        <option value="Italian Restaurant">Italian Restaurant</option>
-        <option value="Coffee Date">Coffee Date</option>
-        <option value="Walk + Dessert">Walk + Dessert</option>
-      </select>
+      <div class="pixel-dropdown" data-name="chosen_location">
+        <div class="pixel-selected">Choose one…</div>
+        <ul class="pixel-options">
+          <li data-value="Italian Restaurant">Italian Restaurant</li>
+          <li data-value="Coffee Date">Coffee Date</li>
+          <li data-value="Walk + Dessert">Walk + Dessert</li>
+        </ul>
+      </div>
+
+      <input type="hidden" name="chosen_location">
 
       <label>Anything you want me to know? ❤️</label>
       <textarea name="message" placeholder="Write something cute…"></textarea>
@@ -49,6 +58,5 @@
   </div>
 
   <script src="script.js"></script>
-
 </body>
 </html>
