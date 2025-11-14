@@ -16,12 +16,9 @@
   </div>
 
   <script>
-    // Clicking the letter fades out and goes to the main page
     document.getElementById("letter").addEventListener("click", () => {
       document.body.classList.add("fade-out");
-      setTimeout(() => {
-        window.location.href = "date.html";
-      }, 600);
+      setTimeout(() => window.location.href = "date.html", 600);
     });
   </script>
 
