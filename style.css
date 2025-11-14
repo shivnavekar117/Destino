@@ -80,7 +80,6 @@ body.fade-out { animation: fadeOut .6s forwards; }
   text-align: center;
 }
 
-/* Titles */
 h1 {
   font-size: 60px;
   color: #5aa6ff;
@@ -94,7 +93,7 @@ h1 {
 }
 
 /* ------------------------------------------
-   PASTEL PIXEL DROPDOWN
+   PIXEL DROPDOWN
 ------------------------------------------ */
 
 .pixel-dropdown {
@@ -147,7 +146,7 @@ h1 {
 }
 
 /* ------------------------------------------
-   TEXTAREA + BUTTON
+   TEXTAREA — PIXEL FONT
 ------------------------------------------ */
 
 textarea {
@@ -158,19 +157,40 @@ textarea {
   border-radius: 8px;
   height: 100px;
   resize: none;
-  font-size: 22px;
+
+  font-family: "Press Start 2P", monospace !important;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
+
+textarea::placeholder {
+  font-family: "Press Start 2P", monospace;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+/* ------------------------------------------
+   BUTTON — PIXEL FONT
+------------------------------------------ */
 
 button {
   width: 100%;
   margin-top: 30px;
   padding: 16px;
-  font-size: 30px;
+
   background: #8dc9ff;
-  color: #fff;
+  color: white;
+
   border: 4px solid #5aa6ff;
   border-radius: 8px;
+
   box-shadow: 4px 4px 0 #5aa6ff;
+
+  font-family: "Press Start 2P", monospace !important;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
   transition: 0.15s;
 }
 
@@ -183,9 +203,15 @@ button:active {
   transform: translate(2px, 2px);
 }
 
-/* Footer */
+/* ------------------------------------------
+   FOOTER
+------------------------------------------ */
+
 .footer {
-  margin-top: 28px;
-  font-size: 22px;
-  color: #5e7e99;
+  margin-top: 20px;
+  color: #4f6e89;
+  font-size: 12px;
+  font-family: "Press Start 2P", monospace !important;
+  letter-spacing: 1px;
+  opacity: 0.6;
 }
