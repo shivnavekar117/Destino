@@ -69,15 +69,29 @@ document.addEventListener("click", e => {
 });
 
 /* --------------------------------------
-   PIXEL ROSE ON SUBMIT
+   PIXEL POPUP + ROSE
 -------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("dateForm");
 
   if (form) {
     form.addEventListener("submit", () => {
-      alert("Grazie bella, il tuo messaggio è arrivato 💌");
+      // Show popup
+      const popup = document.getElementById("pixel-popup");
+      popup.style.display = "block";
 
+      // Hide popup after 2 seconds
+      setTimeout(() => {
+        popup.style.animation = "fadeOutPopup 0.4s forwards";
+      }, 2000);
+
+      // Remove popup fully after fade
+      setTimeout(() => {
+        popup.style.display = "none";
+        popup.style.animation = "";
+      }, 2600);
+
+      // Rose animation
       const container = document.getElementById("rose-container");
       const rose = document.createElement("img");
       rose.src = "rose.png";
@@ -91,4 +105,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
