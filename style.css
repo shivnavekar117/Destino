@@ -132,3 +132,14 @@ button:active {
   color: #5e7e99;
   font-size: 22px;
 }
+/* Force pixel cursor everywhere */
+body,
+button,
+select,
+select option,
+textarea,
+input {
+  cursor: url("pixel-cursor.png") 0 0, auto !important;
+}
+
+
