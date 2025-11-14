@@ -1,6 +1,6 @@
-/* -----------------------------
-   GLOBAL + PIXEL AESTHETIC
------------------------------- */
+/* ------------------------------------------
+   GLOBAL + BACKGROUND + CURSOR
+------------------------------------------ */
 
 body {
   margin: 0;
@@ -8,47 +8,36 @@ body {
   background: #dff4ff;
   font-family: "Jersey 25", sans-serif;
   image-rendering: pixelated;
-}
 
-/* Pixel grid background */
-body {
   background-image:
-    linear-gradient(90deg, rgba(255,255,255,0.35) 1px, transparent 1px),
-    linear-gradient(rgba(255,255,255,0.35) 1px, transparent 1px);
+     linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px),
+     linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 
-/* FORCE PIXEL CURSOR EVERYWHERE */
-body,
-button,
-select,
-select option,
-textarea,
-input,
-img {
+body, button, textarea, input, img, div, li, ul {
   cursor: url("pixel-cursor.png") 0 0, auto !important;
 }
 
-/* -----------------------------
+/* ------------------------------------------
    LANDING PAGE
------------------------------- */
+------------------------------------------ */
 
 body.landing {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  animation: fadeIn 0.5s ease;
+  animation: fadeIn .5s ease;
 }
 
 .landing-container {
   text-align: center;
-  animation: pop 0.7s ease;
+  animation: pop .7s ease;
 }
 
 .letter {
   width: 160px;
-  image-rendering: pixelated;
   animation: float 2s infinite ease-in-out;
 }
 
@@ -58,48 +47,35 @@ body.landing {
   color: #4f6e89;
 }
 
-/* FADE OUT WHEN CLICKED */
-body.fade-out {
-  animation: fadeOut 0.6s forwards;
-}
-
+body.fade-out { animation: fadeOut .6s forwards; }
 @keyframes fadeOut { to { opacity: 0; } }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+@keyframes pop { from{transform:scale(.7);opacity:0} to{transform:scale(1);opacity:1} }
 
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
-}
-
-@keyframes pop {
-  0% { transform: scale(0.7); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-/* -----------------------------
-   MAIN CONTAINER (DATE PAGE)
------------------------------- */
+/* ------------------------------------------
+   MAIN CONTAINER
+------------------------------------------ */
 
 .hint {
   text-align: center;
-  margin-top: 12px;
-  opacity: 0.7;
-  font-size: 20px;
+  opacity: .7;
   color: #6b8ba4;
+  margin-top: 12px;
+  font-size: 20px;
 }
 
 .container {
   max-width: 500px;
   margin: 45px auto;
-  background: #ffffffee;
   padding: 40px;
+  background: #ffffffee;
   border-radius: 12px;
 
   border: 4px solid #8cc4ff;
   box-shadow:
-    0 0 0 4px #cbe6ff,
-    6px 6px 0 #8cc4ff;
+     0 0 0 4px #cbe6ff,
+     6px 6px 0 #8cc4ff;
 
   text-align: center;
 }
@@ -117,60 +93,99 @@ h1 {
   color: #405c73;
 }
 
-/* Form elements */
-label {
-  display: block;
-  text-align: left;
-  margin: 18px 0 6px;
-  font-size: 24px;
+/* ------------------------------------------
+   PASTEL PIXEL DROPDOWN
+------------------------------------------ */
+
+.pixel-dropdown {
+  position: relative;
+  margin: 12px 0;
+}
+
+.pixel-selected {
+  background: #f7fbff;
+  border: 3px solid #9dd3ff;
+  padding: 14px;
+  border-radius: 8px;
+  box-shadow: inset 3px 3px 0 #cbe6ff;
+  font-size: 22px;
   color: #405c73;
 }
 
-select,
+.pixel-options {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  background: #ffffffee;
+  border: 3px solid #9dd3ff;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 #cbe6ff;
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+}
+
+.pixel-dropdown.open .pixel-options {
+  display: block;
+}
+
+.pixel-options li {
+  padding: 12px;
+  border-bottom: 2px solid #cbe6ff;
+  font-size: 22px;
+  color: #405c73;
+}
+
+.pixel-options li:last-child {
+  border-bottom: none;
+}
+
+.pixel-options li:hover {
+  background: #eaf4ff;
+  color: #5aa6ff;
+}
+
+/* ------------------------------------------
+   TEXTAREA + BUTTON
+------------------------------------------ */
+
 textarea {
   width: 100%;
-  padding: 14px;
-  font-size: 22px;
-  border-radius: 8px;
   border: 3px solid #9dd3ff;
   background: #f7fbff;
-  font-family: inherit;
   box-shadow: inset 3px 3px 0 #cbe6ff;
-}
-
-textarea {
+  border-radius: 8px;
   height: 100px;
   resize: none;
+  font-size: 22px;
 }
 
-/* Button */
 button {
   width: 100%;
-  padding: 18px;
-  margin-top: 32px;
+  margin-top: 30px;
+  padding: 16px;
   font-size: 30px;
   background: #8dc9ff;
+  color: #fff;
   border: 4px solid #5aa6ff;
   border-radius: 8px;
-  color: white;
   box-shadow: 4px 4px 0 #5aa6ff;
   transition: 0.15s;
 }
 
 button:hover {
   background: #5aa6ff;
-  box-shadow: 4px 4px 0 #3c7cc2;
   transform: translate(-2px, -2px);
 }
 
 button:active {
   transform: translate(2px, 2px);
-  box-shadow: 1px 1px 0 #3c7cc2;
 }
 
 /* Footer */
 .footer {
   margin-top: 28px;
-  color: #5e7e99;
   font-size: 22px;
+  color: #5e7e99;
 }
